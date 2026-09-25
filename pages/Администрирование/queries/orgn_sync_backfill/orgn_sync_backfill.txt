@@ -1,6 +1,6 @@
 UPDATE appsmith.directory_inn AS d
 SET lsfusion_key = v.key
-FROM jsonb_to_recordset({{this.params.pairs}}::jsonb) AS v(id integer, key bigint)
+FROM jsonb_to_recordset(CAST(CAST({{this.params.pairs}} AS text) AS jsonb)) AS v(id integer, key bigint)
 WHERE d.directory_inn_id = v.id
   AND d.lsfusion_key IS NULL
 RETURNING d.directory_inn_id

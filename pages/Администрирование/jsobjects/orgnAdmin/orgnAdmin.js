@@ -243,17 +243,20 @@ export default {
 				else skip += 1;
 			}
 
-			// 1) backfill ключей по id
-			if (backfillPairs.length) {
-				await orgn_sync_backfill.run({ pairs: JSON.stringify(backfillPairs) });
-			}
-			// 2) UPSERT по lsfusion_key.
-			// Строки передаём JSON-строкой: Appsmith подставляет её как $1-параметр,
-			// а не инлайнит литерал (иначе в SQL попадает массив "[{...}]" и PostgreSQL
-			// даёт "ERROR: syntax error at or near \"[\"").
-			// Дедупликация по key: ON CONFLICT DO UPDATE не допускает повторного
-			// затронутия одной и той же строки в рамках одного INSERT.
-			const seenKeys = new Set();
+			// Передаём массивы объектов как есть (без JSON.stringify): Appsmith сам сериализует
+                        // binding-параметр в JSON и подставляет его в запрос. Предварительный JSON.stringify
+                        // приводит к двойному кодированию — в SQL попадает скалярная JSON-строка "[{...}]",
+                        // и PostgreSQL выдаёт «ERROR: syntax error at or near "["». В SQL-запросах параметр
+                        // приводится к jsonb через CAST(CAST(... AS text) AS jsonb), что корректно работает
+                        // с обеими формами подстановки.
+                        // 1) backfill ключей по id
+                        if (backfillPairs.length) {
+                                await orgn_sync_backfill.run({ pairs: backfillPairs });
+                        }
+                        // 2) UPSERT по lsfusion_key.
+                        // Дедупликация по key: ON CONFLICT DO UPDATE не допускает повторного
+                        // затронутия одной и той же строки в рамках одного INSERT.
+                        const seenKeys = new Set();
 			const upsertRows = rows.filter((r) => {
 				const k = r.key == null ? null : Number(r.key);
 				if (k != null) {
@@ -262,7 +265,7 @@ export default {
 				}
 				return true;
 			});
-			await orgn_upsert_sync.run({ rows: JSON.stringify(upsertRows) });
+			await orgn_upsert_sync.run({ rows: upsertRows });
 
 			await this.refreshOrgn();
 			showAlert(`Синхронизация применена: добавлено ${ins}, обновлено ${upd + bak} (пропущено ${skip}).`, 'success');

@@ -16,7 +16,7 @@ SELECT
     NULLIF(r->>'inn_vyshestoyashego', ''),
     NULLIF(r->>'naimenovanie_vyshestoyashego', ''),
     NULLIF(r->>'naimenovanie_dlya_pechati_vyshestoyashego', '')
-FROM jsonb_array_elements({{this.params.rows}}::jsonb) AS r
+FROM jsonb_array_elements(CAST(CAST({{this.params.rows}} AS text) AS jsonb)) AS r
 ON CONFLICT (lsfusion_key) DO UPDATE SET
     ogrn = EXCLUDED.ogrn,
     inn = EXCLUDED.inn,
