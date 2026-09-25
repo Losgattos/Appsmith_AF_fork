@@ -245,20 +245,41 @@ export default {
 
 			// 1) backfill ключей по id
 			if (backfillPairs.length) {
-				await orgn_sync_backfill.run({ pairs: backfillPairs });
+				await orgn_sync_backfill.run({ pairs: JSON.stringify(backfillPairs) });
 			}
-			// 2) UPSERT по lsfusion_key
-			await orgn_upsert_sync.run({ rows });
+			// 2) UPSERT по lsfusion_key.
+			// Строки передаём JSON-строкой: Appsmith подставляет её как $1-параметр,
+			// а не инлайнит литерал (иначе в SQL попадает массив "[{...}]" и PostgreSQL
+			// даёт "ERROR: syntax error at or near \"[\"").
+			// Дедупликация по key: ON CONFLICT DO UPDATE не допускает повторного
+			// затронутия одной и той же строки в рамках одного INSERT.
+			const seenKeys = new Set();
+			const upsertRows = rows.filter((r) => {
+				const k = r.key == null ? null : Number(r.key);
+				if (k != null) {
+					if (seenKeys.has(k)) return false;
+					seenKeys.add(k);
+				}
+				return true;
+			});
+			await orgn_upsert_sync.run({ rows: JSON.stringify(upsertRows) });
 
 			await this.refreshOrgn();
 			showAlert(`Синхронизация применена: добавлено ${ins}, обновлено ${upd + bak} (пропущено ${skip}).`, 'success');
 		} catch (error) {
 			console.error('Ошибка применения синхронизации:', error);
-			const msg = error?.message ?? String(error ?? '');
+			// Разворачиваем ошибку Appsmith: текст PostgreSQL может лежать в message
+			// либо в JSON-строке message (поле "message" / "originalMessage").
+			let msg = error?.message ?? String(error ?? '');
+			try {
+				const parsed = JSON.parse(msg);
+				msg = parsed?.message ?? parsed?.originalMessage ?? msg;
+			} catch (e) { /* не JSON — оставляем как есть */ }
+			console.error('orgn_upsert_sync failed:', msg);
 			if (/unique|duplicate/i.test(msg)) {
-				showAlert('Конфликт уникальности: проверьте сопоставление lsfusion_key / ИНН+КПП', 'error');
+				showAlert('Конфликт уникальности: проверьте сопоставление lsfusion_key / ИНН+КПП. Подробности: ' + msg, 'error');
 			} else {
-				showAlert('Не удалось применить синхронизацию', 'error');
+				showAlert('Не удалось применить синхронизацию. Подробности: ' + msg, 'error');
 			}
 		}
 	}
