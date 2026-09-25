@@ -27,7 +27,7 @@
         "key": "body"
       }
     ],
-    "executeOnLoad": true,
+    "executeOnLoad": false,
     "name": "reports_data",
     "pageId": "Личный кабинет",
     "userSetOnLoad": false

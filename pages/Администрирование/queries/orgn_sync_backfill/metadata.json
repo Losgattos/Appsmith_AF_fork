@@ -5,7 +5,7 @@
   "pluginType": "DB",
   "unpublishedAction": {
     "actionConfiguration": {
-      "body": "UPDATE appsmith.directory_inn AS d\nSET lsfusion_key = v.key\nFROM jsonb_to_recordset(CAST({{appsmith.params.bindParams.pairs.value}} AS jsonb)) AS v(id integer, key bigint)\nWHERE d.directory_inn_id = v.id\n  AND d.lsfusion_key IS NULL\nRETURNING d.directory_inn_id",
+      "body": "UPDATE appsmith.directory_inn AS d\nSET lsfusion_key = v.key\nFROM jsonb_to_recordset({{this.params.pairs}}::jsonb) AS v(id integer, key bigint)\nWHERE d.directory_inn_id = v.id\n  AND d.lsfusion_key IS NULL\nRETURNING d.directory_inn_id",
       "encodeParamsToggle": true,
       "paginationType": "NONE",
       "pluginSpecifiedTemplates": [
