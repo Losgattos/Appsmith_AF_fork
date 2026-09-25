@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "6aa803cc0ff76f67968af306_e0a832ca-e9fc-49b2-8984-0d8e4fbb254b",
+  "id": "Отчёт_iogv_contact_info",
+  "unpublishedCollection": {
+    "name": "iogv_contact_info",
+    "pageId": "Отчёт",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "regions",
+        "value": "[{\n  inn: \"7825660628\",\n  name: \"Центральный\",\n  semanticKey: \"central\"\n}, {\n  inn: \"7814002313\",\n  name: \"Приморский\",\n  semanticKey: \"primorsky\"\n}, {\n  inn: \"7804042349\",\n  name: \"Калининский\",\n  semanticKey: \"kalinin\"\n}, {\n  inn: \"7810435274\",\n  name: \"Московский\",\n  semanticKey: \"moskovsky\"\n}, {\n  inn: \"7813047833\",\n  name: \"Петроградский\",\n  semanticKey: \"petrograd\"\n}, {\n  inn: \"7816053440\",\n  name: \"Фрунзенский\",\n  semanticKey: \"frunzensky\"\n}, {\n  inn: \"7819000990\",\n  name: \"Петродворцовый\",\n  semanticKey: \"petrodvorets\"\n}, {\n  inn: \"7801042446\",\n  name: \"Василеостровский\",\n  semanticKey: \"vasileostrov\"\n}, {\n  inn: \"7806042263\",\n  name: \"Красногвардейский\",\n  semanticKey: \"krasnogvardeysky\"\n}, {\n  inn: \"7818003903\",\n  name: \"Кронштадтский\",\n  semanticKey: \"kronshtadt\"\n}, {\n  inn: \"7809029013\",\n  name: \"Адмиралтейский\",\n  semanticKey: \"admiralteysky\"\n}, {\n  inn: \"7802047944\",\n  name: \"Выборгский\",\n  semanticKey: \"vyborg\"\n}, {\n  inn: \"7805059546\",\n  name: \"Кировский\",\n  semanticKey: \"kirov\"\n}, {\n  inn: \"7820033454\",\n  name: \"Пушкинский\",\n  semanticKey: \"pushkin\"\n}, {\n  inn: \"7821007802\",\n  name: \"Курортный\",\n  semanticKey: \"kurort\"\n}, {\n  inn: \"7811020096\",\n  name: \"Невский\",\n  semanticKey: \"nevsky\"\n}, {\n  inn: \"7817006891\",\n  name: \"Колпинский\",\n  semanticKey: \"kolpino\"\n}, {\n  inn: \"7807018464\",\n  name: \"Красносельский\",\n  semanticKey: \"krasnoselsky\"\n}, {\n  inn: \"test_iogv1\",\n  name: \"Тестовый\",\n  semanticKey: \"test\"\n}, {\n  inn: \"7830002053\",\n  name: \"Комитет по образованию\",\n  semanticKey: \"ko\"\n}, {\n  inn: \"7808043833\",\n  name: \"Комитет по здравоохранению\",\n  semanticKey: \"kz\"\n}, {\n  inn: \"7808025993\",\n  name: \"Комитет по культуре\",\n  semanticKey: \"kk\"\n}, {\n  inn: \"7842005771\",\n  name: \"Комитет по науке и высшей школе\",\n  semanticKey: \"knvsh\"\n}, {\n  inn: \"7825675663\",\n  name: \"Комитет по социальной политике СПб\",\n  semanticKey: \"ks\"\n}, {\n  inn: \"7803050795\",\n  name: \"Комитет по физической культуре и спорту\",\n  semanticKey: \"kf\"\n}]"
+      },
+      {
+        "name": "responsiblePersons",
+        "value": "[{\n  fio: \"Трифонов Валентин Николаевич\",\n  phone: \"---\",\n  semanticKeys: [\"test\"]\n}, {\n  fio: \"Зайцева Алина Владимировна\",\n  phone: \"88122415182\",\n  semanticKeys: [\"central\", \"primorsky\", \"ko\", \"kz\", \"kk\", \"knvsh\", \"ks\", \"kf\"]\n}, {\n  fio: \"Баев Евгений Олегович\",\n  phone: \"88122415183\",\n  semanticKeys: [\"kalinin\", \"moskovsky\", \"petrograd\"]\n}, {\n  fio: \"Михайлова Олеся Васильевна\",\n  phone: \"88122415175\",\n  semanticKeys: [\"frunzensky\", \"petrodvorets\"]\n}, {\n  fio: \"Грешных Сергей Геннадьевич\",\n  phone: \"88122461960\",\n  semanticKeys: [\"vasileostrov\", \"krasnogvardeysky\", \"kronshtadt\"]\n}, {\n  fio: \"Маркина Инна Сергеевна\",\n  phone: \"88122467643\",\n  semanticKeys: [\"admiralteysky\", \"vyborg\"]\n}, {\n  fio: \"Князева Мария Глебовна\",\n  phone: \"88122461918\",\n  semanticKeys: [\"kirov\", \"pushkin\"]\n}, {\n  fio: \"Лифенко Дарья Александровна\",\n  phone: \"88122461959\",\n  semanticKeys: [\"kurort\", \"nevsky\"]\n}, {\n  fio: \"Полянина Екатерина Васильевна\",\n  phone: \"88122467636\",\n  semanticKeys: [\"kolpino\", \"krasnoselsky\"]\n}]"
+      },
+      {
+        "name": "defaultResponsible",
+        "value": "{\n  phone: \"88122415182\",\n  fio: \"СПб ГКУ ЦАД\"\n}"
+      }
+    ]
+  }
+}

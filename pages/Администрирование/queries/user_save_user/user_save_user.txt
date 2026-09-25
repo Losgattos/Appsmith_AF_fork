@@ -1,0 +1,32 @@
+WITH existing AS (
+    SELECT id FROM appsmith.users WHERE id = {{this.params.user_id}}
+),
+ins AS (
+    INSERT INTO appsmith.users (login, password, directory_inn_id, role_id, is_user_enabled)
+    SELECT {{this.params.login}}, {{this.params.password}},
+           {{this.params.directory_inn_id}}, {{this.params.role_id}}, {{this.params.is_user_enabled}}
+    WHERE NOT EXISTS (SELECT 1 FROM existing)
+    RETURNING id, password, is_user_enabled
+),
+upd AS (
+    UPDATE appsmith.users u
+    SET login = {{this.params.login}},
+        password = CASE WHEN {{this.params.password}} = '' THEN u.password ELSE {{this.params.password}} END,
+        directory_inn_id = {{this.params.directory_inn_id}},
+        role_id = {{this.params.role_id}},
+        is_user_enabled = {{this.params.is_user_enabled}}
+    FROM existing e
+    WHERE u.id = e.id
+    RETURNING u.id, u.password, u.is_user_enabled
+),
+changed AS (
+    SELECT id, password, is_user_enabled FROM ins
+    UNION ALL
+    SELECT id, password, is_user_enabled FROM upd
+)
+UPDATE appsmith.user_sessions s
+SET end_time = (now() AT TIME ZONE 'Europe/Moscow')
+FROM changed ch
+WHERE s.user_id = ch.id
+  AND s.end_time > (now() AT TIME ZONE 'Europe/Moscow')
+  AND (NOT ch.is_user_enabled OR ch.password <> '');

@@ -1,0 +1,23 @@
+SELECT
+    d.innmanagement_headinn_directoryinnclass                                          AS key_func_podchinenie,
+    d.innmanagement_ogrn_directoryinnclass::text                                       AS ogrn,
+    d.innmanagement_inn_directoryinnclass                                              AS inn,
+    d.innmanagement_kpp_directoryinnclass                                              AS kpp,
+    d.innmanagement_fullname_directoryinnclass                                         AS polnoe_naimenovanie,
+    d.innmanagement_shortname_directoryinnclass                                        AS naimenovanie,
+    d.innmanagement_printname_directoryinnclass                                        AS naimenovanie_dlya_pechati,
+    t.innmanagement_typeinn_directorytypeeiclass                                       AS tip_ou,
+    a.innmanagement_namearea_areainstitutionclass                                      AS territoriya,
+    d.innmanagement_legaladdress_directoryinnclass                                     AS yuridicheskiy_adres,
+    d.key0                                                                             AS key,
+    s.innmanagement_namestatusinstitution_statusinstitutionclass                       AS status_ou,
+    f.innmanagement_formorganizationallegal_formorganizationallegalcl                  AS opf,
+    p.innmanagement_inn_directoryinnclass                                              AS inn_vyshestoyashego,
+    p.innmanagement_shortname_directoryinnclass                                        AS naimenovanie_vyshestoyashego,
+    p.innmanagement_printname_directoryinnclass                                        AS naimenovanie_dlya_pechati_vyshestoyashego
+FROM public._auto_innmanagement_directoryinnclass AS d
+LEFT JOIN public._auto_innmanagement_directorytypeeiclass         AS t ON d.innmanagement_inntype_directoryinnclass = t.key0
+LEFT JOIN public._auto_innmanagement_areainstitutionclass         AS a ON d.innmanagement_area_directoryinnclass    = a.key0
+LEFT JOIN public._auto_innmanagement_statusinstitutionclass       AS s ON d.innmanagement_status_directoryinnclass  = s.key0
+LEFT JOIN public._auto_innmanagement_formorganizationallegalclass AS f ON d.innmanagement_form_directoryinnclass   = f.key0
+LEFT JOIN public._auto_innmanagement_directoryinnclass            AS p ON d.innmanagement_headinn_directoryinnclass = p.key0;

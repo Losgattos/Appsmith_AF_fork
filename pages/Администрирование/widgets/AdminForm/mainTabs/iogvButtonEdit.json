@@ -1,0 +1,63 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 79,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "PRIMARY",
+  "disabledWhenInvalid": false,
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "isDefaultClickDisabled": true,
+  "isDisabled": "{{!iogvTable.selectedRow.inn}}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "lpzsae7ya2",
+  "leftColumn": 54,
+  "minWidth": 120,
+  "mobileBottomRow": 9,
+  "mobileLeftColumn": 41,
+  "mobileRightColumn": 57,
+  "mobileTopRow": 5,
+  "needsErrorInfo": false,
+  "onClick": "{{iogvAdmin.openIogvModal(iogvTable.selectedRow)}}",
+  "originalBottomRow": 85,
+  "originalTopRow": 81,
+  "parentColumnSpace": 19.8125,
+  "parentId": "z9tw4tdc3f",
+  "parentRowSpace": 10,
+  "placement": "CENTER",
+  "recaptchaType": "V3",
+  "renderMode": "CANVAS",
+  "resetFormOnClick": false,
+  "responsiveBehavior": "hug",
+  "rightColumn": 58,
+  "text": "Редактировать",
+  "topRow": 75,
+  "type": "BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "oj5r1dlm80",
+  "widgetName": "iogvButtonEdit"
+}

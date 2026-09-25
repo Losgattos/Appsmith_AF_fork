@@ -1,0 +1,17 @@
+SELECT
+    u.id,
+    u.login,
+		u.password,
+    u.role_id,
+		u.directory_inn_id,
+    r.print_name AS role_print_name,
+    di.short_name AS ou_short_name,
+    di.full_name  AS ou_full_name,
+    di.inn        AS ou_inn,
+    u.is_user_enabled,
+    u.created_at,
+    u.updated_at
+FROM appsmith.users u
+LEFT JOIN appsmith.directory_inn di ON u.directory_inn_id = di.directory_inn_id
+LEFT JOIN appsmith.user_role r ON u.role_id = r.role_id
+ORDER BY di.short_name NULLS LAST, u.login;

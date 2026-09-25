@@ -1,0 +1,17 @@
+INSERT INTO appsmith.directory_inn (directory_inn_id, inn, short_name, full_name, ogrn, kpp, print_name, tip_ou, status_ou, opf, parent_short_name, parent_print_name, lsfusion_key)
+VALUES (
+    (SELECT COALESCE(MAX(directory_inn_id), 0) + 1 FROM appsmith.directory_inn),
+    {{this.params.inn}},
+    {{this.params.short_name}},
+    {{this.params.full_name}},
+    {{this.params.ogrn}},
+    {{this.params.kpp}},
+    {{this.params.print_name}},
+    {{this.params.tip_ou}},
+    {{this.params.status_ou}},
+    {{this.params.opf}},
+    {{this.params.parent_short_name}},
+    {{this.params.parent_print_name}},
+    NULL
+)
+RETURNING directory_inn_id

@@ -1,0 +1,3 @@
+SELECT directory_inn_id, inn, short_name, full_name
+FROM appsmith.directory_inn
+WHERE inn = {{this.params.inn}};

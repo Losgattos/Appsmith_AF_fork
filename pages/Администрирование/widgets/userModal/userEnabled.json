@@ -1,0 +1,50 @@
+{
+  "accentColor": "{{appsmith.theme.colors.primaryColor}}",
+  "alignWidget": "LEFT",
+  "animateLoading": true,
+  "bottomRow": 34,
+  "boxShadow": "none",
+  "defaultSwitchState": "{{usersTable.selectedRow.is_user_enabled}}",
+  "dynamicBindingPathList": [
+    {
+      "key": "accentColor"
+    },
+    {
+      "key": "defaultSwitchState"
+    }
+  ],
+  "dynamicHeight": "AUTO_HEIGHT",
+  "dynamicPropertyPathList": [
+    {
+      "key": "defaultSwitchState"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "1u4d1usxyk",
+  "label": "Пользователь активен",
+  "labelPosition": "Left",
+  "leftColumn": 6,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "mobileBottomRow": 57,
+  "mobileLeftColumn": 20,
+  "mobileRightColumn": 32,
+  "mobileTopRow": 53,
+  "needsErrorInfo": false,
+  "originalBottomRow": 43,
+  "originalTopRow": 39,
+  "parentColumnSpace": 5.0625,
+  "parentId": "78vzns08tt",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 53,
+  "topRow": 30,
+  "type": "SWITCH_WIDGET",
+  "version": 1,
+  "widgetId": "ipsmym3fhh",
+  "widgetName": "userEnabled"
+}

@@ -1,0 +1,7 @@
+WITH del AS (
+    DELETE FROM appsmith.directory_inn
+    WHERE directory_inn_id = {{this.params.directory_inn_id}}
+      AND lsfusion_key IS NULL
+    RETURNING directory_inn_id
+)
+SELECT count(*) AS deleted FROM del

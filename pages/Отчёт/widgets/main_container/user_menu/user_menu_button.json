@@ -1,0 +1,131 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06)",
+  "configureMenuItems": {
+    "config": {
+      "id": "config",
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Menu Item"
+    },
+    "id": "config",
+    "label": "Configure menu items"
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "menuItems.menuItemoitjimkwvt.textColor"
+    },
+    {
+      "key": "menuItems.menuItem5tb8eiubdl.backgroundColor"
+    },
+    {
+      "key": "menuItems.menuItem5tb8eiubdl.iconColor"
+    },
+    {
+      "key": "menuItems.menuItem5tb8eiubdl.textColor"
+    },
+    {
+      "key": "menuItems.menuItemoitjimkwvt.isVisible"
+    },
+    {
+      "key": "menuItems.menuItem5tb8eiubdl.isVisible"
+    },
+    {
+      "key": "label"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "menuItems.menuItemoitjimkwvt.isVisible"
+    },
+    {
+      "key": "menuItems.menuItem5tb8eiubdl.isVisible"
+    },
+    {
+      "key": "menuItems.menuItem1.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "menuItems.menuItem1.onClick"
+    },
+    {
+      "key": "menuItems.menuItemoitjimkwvt.onClick"
+    },
+    {
+      "key": "menuItems.menuItem5tb8eiubdl.onClick"
+    }
+  ],
+  "iconAlign": "left",
+  "iconName": "user",
+  "isCompact": false,
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "z1845mdlnc",
+  "label": "{{appsmith.store.user.login}}",
+  "leftColumn": 56,
+  "menuColor": "#4284b4",
+  "menuItems": {
+    "menuItem1": {
+      "iconColor": "#ef4444",
+      "iconName": "log-out",
+      "id": "menuItem1",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Выйти из системы",
+      "onClick": "{{session_manager.logout()}}",
+      "widgetId": ""
+    },
+    "menuItem5tb8eiubdl": {
+      "backgroundColor": "{{appsmith.theme.colors.primaryColor}}",
+      "iconColor": "{{appsmith.theme.colors.backgroundColor}}",
+      "iconName": "envelope",
+      "id": "menuItem5tb8eiubdl",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": "{{\nappsmith.store.user.user_permission.includes('status_update_notifications') ? true : false}}",
+      "label": "Уведомления по почте",
+      "onClick": "{{showModal(modal_email.name);}}",
+      "textColor": "{{appsmith.theme.colors.backgroundColor}}",
+      "widgetId": "3ch0ragchl"
+    },
+    "menuItemoitjimkwvt": {
+      "backgroundColor": "#3f3f46",
+      "iconColor": "#ffffff",
+      "iconName": "cloud-download",
+      "id": "menuItemoitjimkwvt",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": "{{ \nappsmith.store.user.user_permission.includes('report_download')\n}}",
+      "label": "Скачать отчёт ОУ",
+      "onClick": "{{showAlert('Функция по скачиванию отчёта ОУ находится в разработке', 'warning');}}",
+      "textColor": "{{appsmith.theme.colors.backgroundColor}}",
+      "widgetId": "zjqx5eygrh"
+    }
+  },
+  "menuItemsSource": "STATIC",
+  "menuVariant": "SECONDARY",
+  "mobileBottomRow": 43,
+  "mobileLeftColumn": 15,
+  "mobileRightColumn": 31,
+  "mobileTopRow": 39,
+  "needsErrorInfo": false,
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 3.791015625,
+  "parentId": "059qeugl18",
+  "parentRowSpace": 10,
+  "placement": "START",
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "sourceData": [],
+  "topRow": 0,
+  "type": "MENU_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "ofcwab3fb0",
+  "widgetName": "user_menu_button"
+}

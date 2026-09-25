@@ -1,0 +1,2 @@
+SELECT directory_inn_id, inn, kpp, short_name, full_name, lsfusion_key
+FROM appsmith.directory_inn;

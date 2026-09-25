@@ -1,0 +1,4 @@
+UPDATE appsmith.user_sessions
+SET end_time = (now() AT TIME ZONE 'Europe/Moscow') + interval '1 day'
+WHERE sessions_id = {{this.params.session_id}}
+RETURNING sessions_id, end_time;

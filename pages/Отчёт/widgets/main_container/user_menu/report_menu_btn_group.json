@@ -1,0 +1,264 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 8,
+  "boxShadow": "none",
+  "buttonVariant": "PRIMARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton84si7jatqt.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton98hdsk1a0k.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonnyhyfodyif.isVisible"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "groupButtons.groupButton2.iconName"
+    },
+    {
+      "key": "groupButtons.groupButton3.iconName"
+    },
+    {
+      "key": "groupButtons.groupButton84si7jatqt.iconName"
+    },
+    {
+      "key": "groupButtons.groupButtonnyhyfodyif.iconName"
+    },
+    {
+      "key": "groupButtons.groupButton98hdsk1a0k.iconName"
+    },
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton3.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButton3.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton98hdsk1a0k.isDisabled"
+    },
+    {
+      "key": "groupButtons.groupButton98hdsk1a0k.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton84si7jatqt.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonnyhyfodyif.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonnyhyfodyif.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton84si7jatqt.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton98hdsk1a0k.onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton3.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton98hdsk1a0k.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton84si7jatqt.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonnyhyfodyif.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton1": {
+      "buttonColor": "#4284b4",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconAlign": "left",
+      "iconName": "undo",
+      "id": "groupButton1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": true,
+      "label": "Вернуться обратно",
+      "menuItems": {},
+      "onClick": "{{ report_menu_utils.goBackButtonAction() }}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButton2": {
+      "buttonColor": "#8faf9c",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "briefcase",
+      "id": "groupButton2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": "{{ ((appsmith.store.user && appsmith.store.user.user_permissions) || '').includes('approve_report') && ['under_iogv_review','sent_for_review'].includes((appsmith.store.report_status && appsmith.store.report_status.status_system_name) || '') }}",
+      "label": "Утвердить отчёт",
+      "menuItems": {},
+      "onClick": "{{ report_menu_utils.approveReportButtonAction() }}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButton3": {
+      "buttonColor": "#e0dede",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "iconName": "refresh",
+      "id": "groupButton3",
+      "index": 2,
+      "isDisabled": "",
+      "isVisible": true,
+      "label": "Обновить",
+      "menuItems": {
+        "menuItem1": {
+          "backgroundColor": "#FFFFFF",
+          "disabledWhenInvalid": false,
+          "id": "menuItem1",
+          "index": 0,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "First Option",
+          "onClick": "",
+          "widgetId": ""
+        },
+        "menuItem2": {
+          "backgroundColor": "#FFFFFF",
+          "disabledWhenInvalid": false,
+          "id": "menuItem2",
+          "index": 1,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Second Option",
+          "onClick": "",
+          "widgetId": ""
+        },
+        "menuItem3": {
+          "backgroundColor": "#DD4B34",
+          "disabledWhenInvalid": false,
+          "iconAlign": "right",
+          "iconColor": "#FFFFFF",
+          "iconName": "trash",
+          "id": "menuItem3",
+          "index": 2,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Delete",
+          "onClick": "",
+          "textColor": "#FFFFFF",
+          "widgetId": ""
+        }
+      },
+      "onClick": "{{ report_menu_utils.refreshButtonAction() }}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButton84si7jatqt": {
+      "buttonColor": "#42567b",
+      "buttonType": "SIMPLE",
+      "iconName": "send-message",
+      "id": "groupButton84si7jatqt",
+      "index": 3,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": "{{ (appsmith.store.user && appsmith.store.user.user_permissions || '').includes('send_for_review') && ['in_work_ou','returned_for_revision','never_login'].includes((appsmith.store.report_status && appsmith.store.report_status.status_system_name) || '') }}",
+      "itemType": "BUTTON",
+      "label": "Отправить отчёт",
+      "menuItems": {},
+      "onClick": "{{ report_menu_utils.sendRepotrButtonAction() }}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "nilpvalekb"
+    },
+    "groupButton98hdsk1a0k": {
+      "buttonColor": "#3f3f46",
+      "buttonType": "SIMPLE",
+      "iconName": "cloud-download",
+      "id": "groupButton98hdsk1a0k",
+      "index": 5,
+      "isDisabled": "false",
+      "isSeparator": false,
+      "isVisible": "{{ \nappsmith.store.user.user_permission.includes('report_download')\n}}",
+      "itemType": "BUTTON",
+      "label": "Скачать отчёт",
+      "menuItems": {},
+      "onClick": "{{ReportMenuUtils.downloadReportButtonAction()}}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "l1weeyod1g"
+    },
+    "groupButtonnyhyfodyif": {
+      "buttonColor": "#bc9fab",
+      "buttonType": "SIMPLE",
+      "iconName": "hand",
+      "id": "groupButtonnyhyfodyif",
+      "index": 4,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": "{{ (appsmith.store.user && appsmith.store.user.user_permissions || '').includes('return_report') && ['under_iogv_review','approved','send_in_ko','sent_for_review'].includes((appsmith.store.report_status && appsmith.store.report_status.status_system_name) || '') }}",
+      "itemType": "BUTTON",
+      "label": "Вернуть на доработку",
+      "menuItems": {},
+      "onClick": "{{ report_menu_utils.returnForRevisionButtonAction() }}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "h8yeioxi68"
+    }
+  },
+  "isCanvas": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "wph1htpw00",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 10,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "orientation": "horizontal",
+  "originalBottomRow": 8,
+  "originalTopRow": 4,
+  "parentColumnSpace": 19.625,
+  "parentId": "059qeugl18",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 49,
+  "topRow": 4,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "bmn2n5utbc",
+  "widgetName": "report_menu_btn_group"
+}

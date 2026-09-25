@@ -1,0 +1,6 @@
+UPDATE appsmith."iogv_sync_scope" SET
+		"inn" = '{{update_form.fieldState.inn.isVisible ? update_form.formData.inn : update_form.sourceData.inn}}',
+		"short_name" = '{{update_form.fieldState.short_name.isVisible ? update_form.formData.short_name : update_form.sourceData.short_name}}',
+    "is_enabled" = '{{update_form.fieldState.is_enabled.isVisible ? update_form.formData.is_enabled : update_form.sourceData.is_enabled}}',
+		"comment" = '{{update_form.fieldState.comment.isVisible ? update_form.formData.comment : update_form.sourceData.comment}}'
+WHERE "inn" = {{data_table.selectedRow.inn}};

@@ -1,0 +1,3 @@
+SELECT report_id, report_shema_name, default_status, table_meta, default_report_data_json
+FROM appsmith.reports 
+WHERE report_id = {{ this.params.report_id }};

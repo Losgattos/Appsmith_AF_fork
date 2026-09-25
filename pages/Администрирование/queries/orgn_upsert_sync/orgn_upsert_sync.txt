@@ -1,0 +1,34 @@
+INSERT INTO appsmith.directory_inn
+    (lsfusion_key, ogrn, inn, kpp, full_name, short_name, print_name, tip_ou, district, ou_address, status_ou, opf, iogv_inn, parent_short_name, parent_print_name)
+SELECT
+    NULLIF(r->>'key', '')::bigint,
+    NULLIF(r->>'ogrn', ''),
+    NULLIF(r->>'inn', ''),
+    NULLIF(r->>'kpp', ''),
+    NULLIF(r->>'polnoe_naimenovanie', ''),
+    NULLIF(r->>'naimenovanie', ''),
+    NULLIF(r->>'naimenovanie_dlya_pechati', ''),
+    NULLIF(r->>'tip_ou', ''),
+    NULLIF(r->>'territoriya', ''),
+    NULLIF(r->>'yuridicheskiy_adres', ''),
+    NULLIF(r->>'status_ou', ''),
+    NULLIF(r->>'opf', ''),
+    NULLIF(r->>'inn_vyshestoyashego', ''),
+    NULLIF(r->>'naimenovanie_vyshestoyashego', ''),
+    NULLIF(r->>'naimenovanie_dlya_pechati_vyshestoyashego', '')
+FROM jsonb_array_elements({{this.params.rows}}::jsonb) AS r
+ON CONFLICT (lsfusion_key) DO UPDATE SET
+    ogrn = EXCLUDED.ogrn,
+    inn = EXCLUDED.inn,
+    kpp = EXCLUDED.kpp,
+    full_name = EXCLUDED.full_name,
+    short_name = EXCLUDED.short_name,
+    print_name = EXCLUDED.print_name,
+    tip_ou = EXCLUDED.tip_ou,
+    district = EXCLUDED.district,
+    ou_address = EXCLUDED.ou_address,
+    status_ou = EXCLUDED.status_ou,
+    opf = EXCLUDED.opf,
+    iogv_inn = EXCLUDED.iogv_inn,
+    parent_short_name = EXCLUDED.parent_short_name,
+    parent_print_name = EXCLUDED.parent_print_name;

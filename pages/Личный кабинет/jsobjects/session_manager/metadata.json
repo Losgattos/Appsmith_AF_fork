@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6aa803cc0ff76f67968af306_45393ca5-d237-4381-84b8-3a6ff206e78c",
+  "id": "Личный кабинет_session_manager",
+  "unpublishedCollection": {
+    "name": "session_manager",
+    "pageId": "Личный кабинет",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

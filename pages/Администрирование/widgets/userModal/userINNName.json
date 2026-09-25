@@ -1,0 +1,55 @@
+{
+  "animateLoading": true,
+  "borderColor": "#e0dede",
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "borderWidth": "1",
+  "bottomRow": 26,
+  "dynamicBindingPathList": [
+    {
+      "key": "truncateButtonColor"
+    },
+    {
+      "key": "fontFamily"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "text"
+    }
+  ],
+  "dynamicHeight": "FIXED",
+  "dynamicTriggerPathList": [],
+  "fontFamily": "{{appsmith.theme.fontFamily.appFont}}",
+  "fontSize": "0.875rem",
+  "fontStyle": "",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "ad62es85rw",
+  "leftColumn": 2,
+  "maxDynamicHeight": 9000,
+  "minDynamicHeight": 4,
+  "minWidth": 450,
+  "mobileBottomRow": 22,
+  "mobileLeftColumn": 0,
+  "mobileRightColumn": 15,
+  "mobileTopRow": 18,
+  "needsErrorInfo": false,
+  "overflow": "TRUNCATE",
+  "parentColumnSpace": 4.40625,
+  "parentId": "78vzns08tt",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 61,
+  "shouldTruncate": false,
+  "text": "{{(() => { const inn = (userINN.text || '').trim(); if (!inn) return ''; const sel = usersTable.selectedRow; if (sel?.id && inn === sel.ou_inn) return sel.ou_short_name; const found = orgn_get_ou_by_inn.data?.[0]; return found ? found.short_name : 'Учреждение не найдено'; })()}}",
+  "textAlign": "CENTER",
+  "textColor": "#231F20",
+  "topRow": 18,
+  "truncateButtonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "type": "TEXT_WIDGET",
+  "version": 1,
+  "widgetId": "olbttq3vjv",
+  "widgetName": "userINNName"
+}

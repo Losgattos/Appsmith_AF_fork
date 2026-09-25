@@ -1,0 +1,10 @@
+{
+  "accessor": [
+    "uuid"
+  ],
+  "defs": "{\"!name\":\"LIB/uuid\",\"uuid\":{\"NIL\":{\"!type\":\"string\"},\"parse\":{\"!type\":\"fn()\",\"prototype\":{}},\"stringify\":{\"!type\":\"fn()\",\"prototype\":{}},\"v1\":{\"!type\":\"fn()\",\"prototype\":{}},\"v3\":{\"!type\":\"fn()\",\"prototype\":{},\"DNS\":{\"!type\":\"string\"},\"URL\":{\"!type\":\"string\"}},\"v4\":{\"!type\":\"fn()\",\"prototype\":{}},\"v5\":{\"!type\":\"fn()\",\"prototype\":{},\"DNS\":{\"!type\":\"string\"},\"URL\":{\"!type\":\"string\"}},\"validate\":{\"!type\":\"fn()\",\"prototype\":{}},\"version\":{\"!type\":\"fn()\",\"prototype\":{}}}}",
+  "name": "uuid",
+  "uidString": "uuid_https://cdn.jsdelivr.net/npm/uuid@9.0.0/+esm",
+  "url": "https://cdn.jsdelivr.net/npm/uuid@9.0.0/+esm",
+  "version": "9.0.0"
+}

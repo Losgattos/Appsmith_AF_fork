@@ -1,0 +1,17 @@
+SELECT
+    to_char(
+        h.date_time AT TIME ZONE 'UTC' AT TIME ZONE 'Europe/Moscow',
+        'DD.MM.YYYY HH24:MI'
+    ) AS status_date,
+    s.print_name        AS status_print_name,
+    s.system_name       AS status_system_name,
+    s.color             AS status_color,
+    h.comment           AS comment,
+    u.login             AS user_login,
+    r.print_name        AS user_group
+FROM {{this.params.report_shema_name}}.report_status_history h
+LEFT JOIN appsmith.status s ON s.status_id = h.status_id
+LEFT JOIN appsmith.users u ON u.id = h.user_id
+LEFT JOIN appsmith.user_role r ON r.role_id = u.role_id
+WHERE h.directory_inn_id = {{this.params.directory_inn_id}}
+ORDER BY h.date_time ASC;

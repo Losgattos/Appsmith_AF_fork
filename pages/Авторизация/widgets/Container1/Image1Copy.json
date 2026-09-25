@@ -1,0 +1,39 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 20,
+  "boxShadow": "none",
+  "defaultImage": "https://cdn-ru.bitrix24.ru/b22651962/landing/e08/e087209e34fb487676fc50b3b3a54918/Logotip_1.5_v_krivykh_01_1x.png",
+  "dynamicBindingPathList": [
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicTriggerPathList": [],
+  "enableDownload": false,
+  "enableRotation": false,
+  "flexVerticalAlignment": "start",
+  "image": "https://cdn-ru.bitrix24.ru/b22651962/landing/e08/e087209e34fb487676fc50b3b3a54918/Logotip_1.5_v_krivykh_01_1x.png",
+  "imageShape": "RECTANGLE",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "xup470dubt",
+  "leftColumn": 0,
+  "maxZoomLevel": 1,
+  "mobileBottomRow": 14,
+  "mobileLeftColumn": 47,
+  "mobileRightColumn": 59,
+  "mobileTopRow": 2,
+  "needsErrorInfo": false,
+  "objectFit": "contain",
+  "parentColumnSpace": 7.725639343261719,
+  "parentId": "fomuqmvdqv",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "rightColumn": 64,
+  "topRow": 0,
+  "type": "IMAGE_WIDGET",
+  "version": 1,
+  "widgetId": "z0zaavaewt",
+  "widgetName": "Image1Copy"
+}

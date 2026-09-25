@@ -1,0 +1,50 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "SECONDARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "refresh",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "uulxgbe3ts",
+  "leftColumn": 61,
+  "minWidth": 50,
+  "mobileBottomRow": 8,
+  "mobileLeftColumn": 53,
+  "mobileRightColumn": 57,
+  "mobileTopRow": 4,
+  "needsErrorInfo": false,
+  "onClick": "{{ reports_filter.refreshButtonAction() }}",
+  "parentColumnSpace": 16.50390625,
+  "parentId": "yark1b0j42",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 63,
+  "topRow": 0,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "wcoyrwv4qr",
+  "widgetName": "RefreshButton"
+}

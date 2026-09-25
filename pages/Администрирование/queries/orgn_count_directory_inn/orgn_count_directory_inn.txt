@@ -1,0 +1,7 @@
+SELECT count(*)::int AS total
+FROM appsmith.directory_inn
+WHERE ( inn ILIKE '%{{ organisationTable.searchText || "" }}%'
+     OR short_name ILIKE '%{{ organisationTable.searchText || "" }}%'
+     OR full_name ILIKE '%{{ organisationTable.searchText || "" }}%' )
+  AND ( '{{ appsmith.store.orgn_iogv_filter || "" }}' = ''
+     OR iogv_inn = '{{ appsmith.store.orgn_iogv_filter }}' );

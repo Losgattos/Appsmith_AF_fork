@@ -1,0 +1,28 @@
+SELECT
+    r.report_id,
+    r.report_shema_name,
+    r.default_report_data_json::jsonb ->> 'report_name'         AS report_name,
+    r.default_report_data_json::jsonb ->> 'report_system_name'  AS report_system_name,
+    r.default_report_data_json::jsonb ->> 'report_description'  AS report_description,
+    r.default_report_data_json::jsonb ->> 'report_icon'         AS report_icon,
+    r.default_report_data_json::jsonb ->> 'report_src'          AS report_src,
+    r.default_report_data_json::jsonb ->> 'report_local_url'    AS report_local_url,
+    r.default_report_data_json::jsonb ->> 'report_prod_url'     AS report_prod_url,
+
+    dra.from_date,
+    dra.to_date,
+
+    s.status_id,
+    s.print_name    AS status_name,
+    s.system_name   AS status_system_name,
+    s.color         AS status_color,
+
+    r.report_id     AS report_pk_id
+FROM appsmith.directory_reports_available dra
+JOIN appsmith.reports r ON r.report_id = dra.report_id
+LEFT JOIN appsmith.status s ON s.status_id = dra.status_id
+WHERE dra.directory_inn_id = {{this.params.directory_inn_id}}
+  AND (dra.from_date IS NULL OR dra.from_date <= (now() AT TIME ZONE 'Europe/Moscow'))
+  AND (dra.to_date   IS NULL OR dra.to_date   >= (now() AT TIME ZONE 'Europe/Moscow'))
+  AND (r.default_report_data_json::jsonb  ->> 'enabled')::boolean = true
+ORDER BY report_name;

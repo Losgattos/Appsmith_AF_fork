@@ -1,0 +1,26 @@
+WITH updated AS (
+    UPDATE appsmith.directory_reports_available dra
+    SET status_id = (
+        SELECT status_id FROM appsmith.status 
+        WHERE system_name = '{{this.params.new_status_system_name}}'
+    )
+    WHERE dra.directory_inn_id = {{this.params.directory_inn_id}}
+      AND dra.report_id = {{this.params.report_id}}
+      AND dra.status_id IN (
+          SELECT status_id FROM appsmith.status
+          WHERE system_name = ANY(
+              string_to_array('{{this.params.from_status_system_names}}', ',')
+          )
+      )
+    RETURNING dra.directory_inn_id, dra.status_id
+)
+INSERT INTO {{this.params.report_shema_name}}.report_status_history 
+    (directory_inn_id, status_id, user_id, comment, date_time)
+SELECT 
+    directory_inn_id, 
+    status_id, 
+    {{this.params.user_id}}, 
+    NULLIF('{{this.params.comment}}', ''), 
+    now()
+FROM updated
+RETURNING id;

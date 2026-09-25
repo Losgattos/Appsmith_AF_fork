@@ -1,0 +1,12 @@
+INSERT INTO appsmith."iogv_sync_scope" (
+	"inn",
+	"inn",
+	"short_name",
+	"is_enabled",
+	"comment")
+VALUES (
+	'{{insert_form.formData.inn}}',
+	'{{insert_form.formData.inn}}',
+	'{{insert_form.formData.short_name}}',
+	'{{insert_form.formData.is_enabled}}',
+	'{{insert_form.formData.comment}}');

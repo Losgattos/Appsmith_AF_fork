@@ -1,0 +1,44 @@
+{
+  "gitSyncId": "6aa803cc0ff76f67968af306_f3b92294-fa6f-4453-8c96-cb6f307d0134",
+  "id": "Отчёт_DBData",
+  "unpublishedCollection": {
+    "name": "DBData",
+    "pageId": "Отчёт",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "js_report_data",
+        "value": "null"
+      },
+      {
+        "name": "report_obj",
+        "value": "null"
+      },
+      {
+        "name": "report",
+        "value": "null"
+      },
+      {
+        "name": "selected_tab",
+        "value": "0"
+      },
+      {
+        "name": "directory_inn",
+        "value": "0"
+      },
+      {
+        "name": "report_id",
+        "value": "0"
+      },
+      {
+        "name": "default_data",
+        "value": "null"
+      },
+      {
+        "name": "tab_data_cache",
+        "value": "{}"
+      }
+    ]
+  }
+}

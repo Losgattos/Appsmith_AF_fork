@@ -1,0 +1,8 @@
+INSERT INTO {{this.params.report_shema_name}}.report_data 
+    (directory_inn_id, tab_id, report_id, status_id, report_data)
+VALUES 
+    ({{this.params.directory_inn}}, {{this.params.tab_id}}, {{this.params.report_id}}, {{this.params.status_id}}, '{{this.params.report_data}}')
+ON CONFLICT (directory_inn_id, tab_id) 
+DO UPDATE SET 
+    status_id = {{this.params.status_id}}, 
+    report_data = '{{this.params.report_data}}';

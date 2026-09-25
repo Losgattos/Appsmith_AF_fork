@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6aa803cc0ff76f67968af306_0d961f4b-3865-4910-8430-9b4a911d0c3a",
+  "id": "Авторизация_authorization",
+  "unpublishedCollection": {
+    "name": "authorization",
+    "pageId": "Авторизация",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

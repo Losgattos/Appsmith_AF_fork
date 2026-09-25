@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6aa803cc0ff76f67968af306_edaa4e25-d846-4778-9a5b-c5f661cb97f9",
+  "id": "Личный кабинет_reports_filter",
+  "unpublishedCollection": {
+    "name": "reports_filter",
+    "pageId": "Личный кабинет",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

@@ -1,0 +1,9 @@
+SELECT
+    s.status_id,
+    s.print_name    AS status_name,
+    s.system_name   AS status_system_name,
+    s.color         AS status_color
+FROM appsmith.directory_reports_available dra
+JOIN appsmith.status s ON s.status_id = dra.status_id
+WHERE dra.directory_inn_id = {{this.params.directory_inn_id}}
+  AND dra.report_id = {{this.params.report_id}};

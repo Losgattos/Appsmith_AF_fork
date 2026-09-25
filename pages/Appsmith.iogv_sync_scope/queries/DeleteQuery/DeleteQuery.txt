@@ -1,0 +1,2 @@
+DELETE FROM appsmith."iogv_sync_scope"
+  WHERE "inn" = {{data_table.triggeredRow.inn}};

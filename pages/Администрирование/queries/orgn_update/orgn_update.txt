@@ -1,0 +1,15 @@
+UPDATE appsmith.directory_inn
+SET inn = {{this.params.inn}},
+    short_name = {{this.params.short_name}},
+    full_name = {{this.params.full_name}},
+    ogrn = {{this.params.ogrn}},
+    kpp = {{this.params.kpp}},
+    print_name = {{this.params.print_name}},
+    tip_ou = {{this.params.tip_ou}},
+    status_ou = {{this.params.status_ou}},
+    opf = {{this.params.opf}},
+    parent_short_name = {{this.params.parent_short_name}},
+    parent_print_name = {{this.params.parent_print_name}}
+WHERE directory_inn_id = {{this.params.directory_inn_id}}
+  AND lsfusion_key IS NULL
+RETURNING directory_inn_id

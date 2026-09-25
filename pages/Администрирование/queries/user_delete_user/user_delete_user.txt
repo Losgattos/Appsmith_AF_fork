@@ -1,0 +1,14 @@
+WITH info AS (
+    SELECT
+        {{this.params.user_id}} AS uid,
+        EXISTS (SELECT 1 FROM appsmith.user_sessions s WHERE s.user_id = {{this.params.user_id}}) AS has_sessions,
+        EXISTS (SELECT 1 FROM name_report_2026.report_status_history h WHERE h.user_id = {{this.params.user_id}}) AS has_history
+),
+del AS (
+    DELETE FROM appsmith.users u
+    USING info i
+    WHERE u.id = i.uid AND NOT i.has_sessions AND NOT i.has_history
+    RETURNING u.id
+)
+SELECT i.has_sessions, i.has_history, (SELECT count(*) FROM del) AS deleted
+FROM info i;

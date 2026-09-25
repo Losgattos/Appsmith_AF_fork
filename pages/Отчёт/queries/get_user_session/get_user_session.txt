@@ -1,0 +1,23 @@
+SELECT 
+    u.*,
+    di.short_name       AS ou_short_name,
+    di.full_name        AS ou_full_name,
+    di.district,
+    di.type_id,
+		di.iogv_inn,
+		it.print_name       AS ou_type_print_name,  
+    it.system_name      AS ou_type_system_name,
+    iogv.short_name     AS ou_iogv_short_name, 
+    iogv.full_name      AS ou_iogv_full_name,
+    r.print_name        AS role_print_name,
+    r.system_name       AS role_system_name,
+    r.user_permissions,
+    s.end_time          AS session_end_time
+FROM appsmith.user_sessions s
+JOIN appsmith.users u ON s.user_id = u.id
+JOIN appsmith.directory_inn di ON u.directory_inn_id = di.directory_inn_id
+LEFT JOIN appsmith.directory_inn iogv ON di.iogv_inn = iogv.inn
+LEFT JOIN appsmith.inn_type it ON di.type_id = it.inn_type_id
+LEFT JOIN appsmith.user_role r ON u.role_id = r.role_id
+WHERE s.sessions_id = {{this.params.session_id}}
+  AND s.end_time > (now() AT TIME ZONE 'Europe/Moscow');

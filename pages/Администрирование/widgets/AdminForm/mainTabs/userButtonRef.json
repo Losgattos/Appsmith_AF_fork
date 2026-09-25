@@ -1,0 +1,52 @@
+{
+  "animateLoading": true,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 79,
+  "boxShadow": "none",
+  "buttonColor": "{{appsmith.theme.colors.primaryColor}}",
+  "buttonVariant": "TERTIARY",
+  "dynamicBindingPathList": [
+    {
+      "key": "buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "onClick"
+    }
+  ],
+  "iconName": "refresh",
+  "isDisabled": false,
+  "isLoading": false,
+  "isVisible": true,
+  "key": "v7wkymj5os",
+  "leftColumn": 62,
+  "minWidth": 50,
+  "mobileBottomRow": 16,
+  "mobileLeftColumn": 42,
+  "mobileRightColumn": 46,
+  "mobileTopRow": 12,
+  "needsErrorInfo": false,
+  "onClick": "{{userAdmin.refreshUsers()}}",
+  "originalBottomRow": 85,
+  "originalTopRow": 81,
+  "parentColumnSpace": 19.8125,
+  "parentId": "goyp04slzy",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "hug",
+  "rightColumn": 64,
+  "topRow": 75,
+  "type": "ICON_BUTTON_WIDGET",
+  "version": 1,
+  "widgetId": "m23d9wg630",
+  "widgetName": "userButtonRef"
+}

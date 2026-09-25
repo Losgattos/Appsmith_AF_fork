@@ -1,0 +1,4 @@
+WITH del AS (
+    DELETE FROM appsmith."iogv_sync_scope" WHERE inn = {{this.params.inn}} RETURNING inn
+)
+SELECT count(*) AS deleted FROM del

@@ -1,0 +1,6 @@
+SELECT sessions_id, end_time
+FROM appsmith.user_sessions
+WHERE user_id = {{this.params.user_id}}
+  AND end_time > (now() AT TIME ZONE 'Europe/Moscow')
+ORDER BY end_time DESC
+LIMIT 1;

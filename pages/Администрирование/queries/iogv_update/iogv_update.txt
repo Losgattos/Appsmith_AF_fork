@@ -1,0 +1,7 @@
+UPDATE appsmith."iogv_sync_scope"
+SET inn = {{this.params.inn}},
+    short_name = {{this.params.short_name}},
+    is_enabled = {{this.params.is_enabled}},
+    comment = {{this.params.comment}}
+WHERE inn = {{this.params.old_inn}}
+RETURNING inn

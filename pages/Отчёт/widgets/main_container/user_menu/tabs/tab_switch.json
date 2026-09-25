@@ -1,0 +1,237 @@
+{
+  "animateLoading": false,
+  "borderRadius": "{{appsmith.theme.borderRadius.appBorderRadius}}",
+  "bottomRow": 4,
+  "bottomRowBeforeCollapse": 10,
+  "boxShadow": "none",
+  "buttonVariant": "PRIMARY",
+  "childStylesheet": {
+    "button": {
+      "buttonColor": "{{appsmith.theme.colors.primaryColor}}"
+    }
+  },
+  "dynamicBindingPathList": [
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton3.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton1.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton3.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton1.label"
+    },
+    {
+      "key": "groupButtons.groupButton2.label"
+    },
+    {
+      "key": "groupButtons.groupButton3.label"
+    },
+    {
+      "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "borderRadius"
+    },
+    {
+      "key": "groupButtons.groupButtonfx8uwjr3f5.label"
+    },
+    {
+      "key": "groupButtons.groupButtonfx8uwjr3f5.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonfx8uwjr3f5.buttonColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicPropertyPathList": [
+    {
+      "key": "groupButtons.groupButton1.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton2.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton3.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton3.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton1.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton2.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButton3.buttonColor"
+    },
+    {
+      "key": "groupButtons.groupButtonfx8uwjr3f5.isVisible"
+    },
+    {
+      "key": "groupButtons.groupButtonfx8uwjr3f5.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonfx8uwjr3f5.buttonColor"
+    },
+    {
+      "key": "isDisabled"
+    }
+  ],
+  "dynamicTriggerPathList": [
+    {
+      "key": "groupButtons.groupButton1.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton2.onClick"
+    },
+    {
+      "key": "groupButtons.groupButton3.onClick"
+    },
+    {
+      "key": "groupButtons.groupButtonfx8uwjr3f5.onClick"
+    }
+  ],
+  "groupButtons": {
+    "groupButton1": {
+      "buttonColor": "{{ appsmith.store.activeTab === 1 ? '#4284b4' : '#F0F0F0' }}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "id": "groupButton1",
+      "index": 0,
+      "isDisabled": false,
+      "isVisible": "{{ tab_utils.isTabVisible(1) }}",
+      "label": "{{tab_utils.getTabProperty(1, 'print_name'); }}",
+      "menuItems": {},
+      "onClick": "{{ DBData.changeTab(1); }}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButton2": {
+      "buttonColor": "{{ appsmith.store.activeTab === 2 ? '#4284b4' : '#F0F0F0' }}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "id": "groupButton2",
+      "index": 1,
+      "isDisabled": false,
+      "isVisible": "{{ tab_utils.isTabVisible(2) }}",
+      "label": "{{tab_utils.getTabProperty(2, 'print_name'); }}",
+      "menuItems": {},
+      "onClick": "{{ DBData.changeTab(2); }}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButton3": {
+      "buttonColor": "{{ appsmith.store.activeTab === 3 ? '#4284b4' : '#F0F0F0' }}",
+      "buttonType": "SIMPLE",
+      "disabledWhenInvalid": false,
+      "id": "groupButton3",
+      "index": 2,
+      "isDisabled": false,
+      "isVisible": "{{ tab_utils.isTabVisible(3) }}",
+      "label": "{{tab_utils.getTabProperty(3, 'print_name'); }}",
+      "menuItems": {
+        "menuItem1": {
+          "backgroundColor": "#FFFFFF",
+          "disabledWhenInvalid": false,
+          "id": "menuItem1",
+          "index": 0,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "First Option",
+          "onClick": "",
+          "widgetId": ""
+        },
+        "menuItem2": {
+          "backgroundColor": "#FFFFFF",
+          "disabledWhenInvalid": false,
+          "id": "menuItem2",
+          "index": 1,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Second Option",
+          "onClick": "",
+          "widgetId": ""
+        },
+        "menuItem3": {
+          "backgroundColor": "#DD4B34",
+          "disabledWhenInvalid": false,
+          "iconAlign": "right",
+          "iconColor": "#FFFFFF",
+          "iconName": "trash",
+          "id": "menuItem3",
+          "index": 2,
+          "isDisabled": false,
+          "isVisible": true,
+          "label": "Delete",
+          "onClick": "",
+          "textColor": "#FFFFFF",
+          "widgetId": ""
+        }
+      },
+      "onClick": "{{ DBData.changeTab(3); }}",
+      "placement": "CENTER",
+      "widgetId": ""
+    },
+    "groupButtonfx8uwjr3f5": {
+      "buttonColor": "{{ appsmith.store.activeTab === 4 ? '#4284b4' : '#F0F0F0' }}",
+      "buttonType": "SIMPLE",
+      "id": "groupButtonfx8uwjr3f5",
+      "index": 3,
+      "isDisabled": false,
+      "isSeparator": false,
+      "isVisible": "{{ tab_utils.isTabVisible(4) }}",
+      "itemType": "BUTTON",
+      "label": "{{tab_utils.getTabProperty(4, 'print_name'); }}",
+      "menuItems": {},
+      "onClick": "{{ DBData.changeTab(4); }}",
+      "placement": "CENTER",
+      "variant": "filled",
+      "widgetId": "713wfpvhf9"
+    }
+  },
+  "isCanvas": false,
+  "isDisabled": "{{ newTable.model.isEditing ? true : false }}",
+  "isLoading": false,
+  "isVisible": true,
+  "key": "sdp3vp7ypp",
+  "leftColumn": 0,
+  "minWidth": 450,
+  "mobileBottomRow": 4,
+  "mobileLeftColumn": 23,
+  "mobileRightColumn": 47,
+  "mobileTopRow": 0,
+  "needsErrorInfo": false,
+  "orientation": "horizontal",
+  "originalBottomRow": 18,
+  "originalTopRow": 14,
+  "parentColumnSpace": 16.6875,
+  "parentId": "i0xzkmi5je",
+  "parentRowSpace": 10,
+  "renderMode": "CANVAS",
+  "responsiveBehavior": "fill",
+  "rightColumn": 49,
+  "topRow": 0,
+  "topRowBeforeCollapse": 6,
+  "type": "BUTTON_GROUP_WIDGET",
+  "version": 1,
+  "widgetId": "f93h1qcx83",
+  "widgetName": "tab_switch"
+}

@@ -1,0 +1,1 @@
+SELECT * FROM appsmith."iogv_sync_scope" ORDER BY is_enabled DESC, short_name

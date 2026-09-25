@@ -1,0 +1,5 @@
+SELECT id
+FROM appsmith.users
+WHERE lower(login) = lower({{this.params.login}})
+  AND ({{this.params.user_id}}::bigint IS NULL OR id <> {{this.params.user_id}}::bigint)
+LIMIT 1;

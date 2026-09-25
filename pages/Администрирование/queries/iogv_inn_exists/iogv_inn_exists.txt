@@ -1,0 +1,5 @@
+SELECT 1
+FROM appsmith."iogv_sync_scope"
+WHERE inn = {{this.params.inn}}
+  AND inn <> COALESCE({{this.params.exclude_inn}}::text, '')
+LIMIT 1;

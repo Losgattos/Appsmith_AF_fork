@@ -1,0 +1,11 @@
+{
+  "gitSyncId": "6aa803cc0ff76f67968af306_fcf8d5d4-b9fd-489b-aeb9-88ab975459bb",
+  "id": "Отчёт_MockData",
+  "unpublishedCollection": {
+    "name": "MockData",
+    "pageId": "Отчёт",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": []
+  }
+}

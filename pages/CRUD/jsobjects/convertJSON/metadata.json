@@ -1,0 +1,24 @@
+{
+  "gitSyncId": "6aa803cc0ff76f67968af306_7f8c48fc-1f2b-46d2-9d2e-a49d53b81b7b",
+  "id": "CRUD_convertJSON",
+  "unpublishedCollection": {
+    "name": "convertJSON",
+    "pageId": "CRUD",
+    "pluginId": "js-plugin",
+    "pluginType": "JS",
+    "variables": [
+      {
+        "name": "js_report_data",
+        "value": "null"
+      },
+      {
+        "name": "report_obj",
+        "value": "null"
+      },
+      {
+        "name": "selected_tab",
+        "value": "0"
+      }
+    ]
+  }
+}
